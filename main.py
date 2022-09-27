@@ -1,21 +1,20 @@
+import re
 from fastapi import FastAPI
 
-import uuid
-import datetime
+from controllers.status import Status
+from controllers.weather import Weather
 
 # Create new FastAPI instance
 app = FastAPI()
+status = Status()
+weather = Weather()
 
 
 @app.get('/')
-async def status():
-    response = {
-        "msg": "Current API status",
-        "name": "weather-scraper-api",
-        "environment": "production",
-        "version": "0.0.1",
-        "uptime": datetime.datetime.now(),
-        "hash": uuid.uuid4(),
-    }
+async def api_status():
+    return status.api()
 
-    return response
+
+@app.get('/temperature')
+async def temperature():
+    return weather.temperature()
