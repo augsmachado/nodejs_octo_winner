@@ -19,7 +19,7 @@ export default class StatusController {
 
 			res.json(response);
 		} catch (err) {
-			res.status(500).json({
+			res.status(503).json({
 				error: "Unable to getting API status",
 				details: `${err}`,
 			});
