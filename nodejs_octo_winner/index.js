@@ -1,7 +1,7 @@
-import express from "express";
-import dotenv from "dotenv";
+const express = require("express");
+const dotenv = require("dotenv");
 
-import status from "./routes/status.routes.js";
+const status = require("./routes/status.routes.js");
 
 // Define .env config
 dotenv.config();
@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 
 // Define action routes
-app.use("/", status);
+app.use("/status", status);
 
 // Define action to undefined route
 app.use("*", (req, res) => {
@@ -22,4 +22,4 @@ app.use("*", (req, res) => {
 
 app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
 
-export default app;
+module.exports = app;
