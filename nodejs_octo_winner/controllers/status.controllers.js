@@ -7,14 +7,16 @@ dotenv.config();
 class StatusController {
 	static async getStatusServer(req, res) {
 		try {
-			let response = {
+			let status = {
 				msg: "Current server status",
-				version: process.env.SERVER_VERSION,
+				name: "octo-winner",
+				environment: process.env.API_ENVIRONMENT,
+				version: process.env.API_VERSION,
 				uptime: new Date().getTime(),
 				hash: uuidv4(),
 			};
 
-			res.json(response);
+			res.json(status);
 		} catch (err) {
 			res.status(503).json({
 				error: "Unable to getting server status",
