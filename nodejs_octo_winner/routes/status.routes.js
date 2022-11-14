@@ -4,6 +4,6 @@ const StatusCtrl = require("../controllers/status.controllers.js");
 
 const router = express.Router();
 
-router.route("/server").get(StatusCtrl.getStatusServer);
+router.route("/").get(StatusCtrl.getStatusServer);
 
 module.exports = router;
