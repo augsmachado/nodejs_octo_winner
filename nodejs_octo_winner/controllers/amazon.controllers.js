@@ -76,23 +76,14 @@ class AmazonController {
 		const headers = req.headers["x-api-key"];
 		const api_key = Buffer.from(headers, "base64").toString();
 
-		const product_name =
-			req.query.product_name !== undefined
-				? req.query.product_name
-				: "kindle";
+		const product_name = req.query.product_name;
 
 		// Test if page exists and it is a number
-		const page =
-			1 || req.query.page.length > 0
-				? /[0-9]/g.test(req.query.page)
-					? Number(req.query.page)
-					: 1
-				: 1;
+		const page = /[0-9]/g.test(req.query.page) ? Number(req.query.page) : 1;
 
-		if (api_key === process.env.AMAZON_API_KEY) {
+		if (api_key === process.env.AMAZON_API_KEY && page > 0) {
 			const link = `${process.env.AMAZON_BASE_URL}/s?k=${product_name}&page=${page}`;
-			axios
-				.get(link)
+			axios(link)
 				.then((response) => {
 					const html = response.data;
 					const $ = cheerio.load(html);
