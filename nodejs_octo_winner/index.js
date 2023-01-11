@@ -4,7 +4,6 @@ const dotenv = require("dotenv");
 const NodeCache = require("node-cache");
 
 const status = require("./routes/status.routes.js");
-const amazon = require("./routes/amazon.routes.js");
 
 // Define .env config
 dotenv.config();
@@ -31,7 +30,6 @@ app.use(express.json());
 
 // Define action routes
 app.use("/status", status);
-app.use("/amazon", verifyCache, amazon);
 
 // Define action to undefined route
 app.use("*", (req, res) => {
