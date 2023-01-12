@@ -1,7 +1,1 @@
-{
-    "controllers/status.controllers.js": "e3516e21bcb291066e70668d5128e68300f83c9303f309ebb78a17d0f107bfa1",
-    "index.js": "713b91aefd4f14435cf0c46ebb3cb35f519a85408cb2534270d8d8f3e98296d0",
-    "package-lock.json": "6b8cf714f25c29f0cb85b3f53c63e29ec68a83c60290b5573c9924939f870215",
-    "package.json": "7a07f96bc29a14963b94cb3f07eb6b0f8cf3e1109836cf8ad700080727e16927",
-    "routes/status.routes.js": "44112df07a7e1fed6b9ddf5d1b309a93f92396ae0e97ac59d173327a72a42743"
-}
+{"index.js":"2631bf70692f1778d199227f5fcc679b82ad61d6307a740d63bdbde3fc5f6cd7","package-lock.json":"2d6b4484068fc3043bb3b5c9e2d2e920cc89052ffd3f566030e13997cd30c7c3","package.json":"b8e23ca701bd59b4525068d8a37de98d87dab29c3ceeff3b195bbb0ce23cc403"}
